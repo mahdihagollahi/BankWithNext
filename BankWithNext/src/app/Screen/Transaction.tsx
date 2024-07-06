@@ -1,13 +1,14 @@
 
-import  { useState, useContext } from "react";
+import  { useState } from "react";
 import { IoCard } from "react-icons/io5";
 import { FaRegEdit } from "react-icons/fa";
 import { useSelector } from 'react-redux';
-import { ProfileContext } from "../Componnent/EveryThing";
+import Img from 'next/image';
+
 import { RootState } from "../Redux/feature/store"
-export default function Card() {
+export default function Card({handelNegetive , imgBank}) {
   const selectedCard = useSelector((state:RootState) => state.card.selectedCard);
-  const { imgBank, handelNegetive } = useContext(ProfileContext);
+  
   const [cartCash, setcartCash] = useState("");
 
   const disableNumberDefult = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -52,7 +53,7 @@ export default function Card() {
               disabled
             />
             {imgBank && (
-              <img className="w-[5%] absolute top-[2%] left-[6%]" src={imgBank} alt="Bank Logo" />
+              <Img className="w-[5%] absolute top-[2%] left-[6%]" width={80} height={80} src={imgBank} alt="Bank Logo" />
             )}
           </div>
 

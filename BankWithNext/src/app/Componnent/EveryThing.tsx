@@ -1,5 +1,5 @@
 "use client"
-import {  createContext ,FC } from "react";
+import {  FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Transaction from "../Screen/Transaction";
@@ -11,7 +11,6 @@ import { setImageCart, resetImageBank } from "../Redux/feature/bankSlice";
 import { negetiveInventory , setCardDetails } from '../Redux/feature/cardSlice';
 import { RootState } from "../Redux/feature/store";
 
-export const ProfileContext = createContext<any>(null);
 
 const EveryThing:FC = ()=> {
   
@@ -39,7 +38,7 @@ const EveryThing:FC = ()=> {
     console.log("Bank code:", value);
     switch (value) {
       case "6037":
-        dispatch(setImageCart("src/assets/Img/saderat.png"));
+        dispatch(setImageCart("/src/app/assets/Img/windose\ 11.jpeg"));
         break;
       case "6219":
         dispatch(setImageCart("src/assets/Img/Blue.png"));
@@ -186,13 +185,7 @@ const EveryThing:FC = ()=> {
   };
 
   return (
-    <ProfileContext.Provider
-      value={{
-        handelNegetive,
-        bankImage,
-        imgBank,
-      }}
-    >
+    
       <div>
         <Navbar />
 
@@ -206,7 +199,8 @@ const EveryThing:FC = ()=> {
             path="/Transaction"
             element={
               <Transaction
-              
+              imgBank={imgBank}
+              handelNegetive={handelNegetive}
               />
             }
           />
@@ -231,8 +225,10 @@ const EveryThing:FC = ()=> {
           })}
         </div>
       </div>
-    </ProfileContext.Provider>
+  
   );
 }
 
 export default EveryThing;
+
+

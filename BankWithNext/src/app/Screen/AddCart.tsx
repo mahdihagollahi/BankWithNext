@@ -4,20 +4,15 @@ import { IoCard } from "react-icons/io5";
 import { FaRegEdit } from "react-icons/fa";
 import {addCard  } from '../Redux/feature/cardSlice'
 import { setImageCart, resetImageBank  } from '../Redux/feature/bankSlice';
+import { RootState } from "../Redux/feature/store";
+import Img from 'next/image';
 
-// import { ProfileContext } from "../App";
+
+
 
 export default function AddCard() {
   const dispatch = useDispatch();
-  // const {
-    // handleAddCard,
-    // handleBankImage,
-    // imgBank,
-
-//     handleAddCard,
-// bankImage,
-// imgBank
-  // } = useContext(ProfileContext);
+ 
 
   const [number, setNumber] = useState("");
   const [cvv2, setCvv2] = useState("");
@@ -27,7 +22,7 @@ export default function AddCard() {
   const [password, setPassword] = useState("");
   const [inventory, setInventory] = useState("");
 
-  const handleChange = (event) => {
+  const handleChange = (event:any) => {
     const { value } = event.target;
     const sanitizedValue = value.replace(/\s+/g, "");
     const formattedValue = sanitizedValue.replace(/(.{4})/g, "$1 ");
@@ -52,14 +47,14 @@ export default function AddCard() {
  
 
   
-  const imgBank = useSelector((state) => state.Bank.ImgBank);
+  const imgBank = useSelector((state:RootState) => state.Bank.ImgBank);
 
-  const bankImage = (e) => {
+  const bankImage = (e:React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.slice(0,4);
     console.log("Bank code:", value);
   switch(value){
     case "6037":
-    dispatch(setImageCart('src/assets/Img/saderat.png'));
+    dispatch(setImageCart('/src/app/assets/Img/saderat.png'));
     break;
   case "6219":
     dispatch(setImageCart('src/assets/Img/Blue.png'));
@@ -245,7 +240,7 @@ export default function AddCard() {
                 maxLength="19"
               />
               {imgBank && (
-                <img className="w-[5%] absolute top-[2%] left-[6%]" src={imgBank} alt="Bank Logo" />
+                <Img className="w-[5%] absolute top-[2%] left-[6%]" src={imgBank} alt="Bank Logo" width={80} height={80} />
               )}
             </div>
             <div className="flex mt-10 text-right text-black">
