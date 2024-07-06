@@ -4,7 +4,7 @@ import { IoCard } from "react-icons/io5";
 import { FaRegEdit } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { ProfileContext } from "../Componnent/EveryThing";
-import { RootState } from "../Redux/store"
+import { RootState } from "../Redux/feature/store"
 export default function Card() {
   const selectedCard = useSelector((state:RootState) => state.card.selectedCard);
   const { imgBank, handelNegetive } = useContext(ProfileContext);

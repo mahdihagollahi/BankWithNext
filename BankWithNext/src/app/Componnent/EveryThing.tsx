@@ -7,9 +7,9 @@ import History from "../Screen/History";
 import InputCard from "../Screen/AddCart";
 import Card from "./Card";
 import Navbar from "./Navbar";
-import { setImageCart, resetImageBank } from "../Redux/bankSlice";
-import { negetiveInventory , setCardDetails } from '../Redux/cardSlice';
-import { RootState } from "../Redux/store";
+import { setImageCart, resetImageBank } from "../Redux/feature/bankSlice";
+import { negetiveInventory , setCardDetails } from '../Redux/feature/cardSlice';
+import { RootState } from "../Redux/feature/store";
 
 export const ProfileContext = createContext<any>(null);
 

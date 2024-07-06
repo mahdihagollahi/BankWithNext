@@ -1,7 +1,7 @@
 
 import HistoryCard from '../Componnent/HistoryCart';
 import {  useSelector } from "react-redux";
-import { RootState } from '../Redux/store';
+import { RootState } from '../Redux/feature/store';
 
 export default function History() {
 const {historyList} = useSelector((state:RootState) => state.card)

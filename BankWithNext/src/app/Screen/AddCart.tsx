@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { IoCard } from "react-icons/io5";
 import { FaRegEdit } from "react-icons/fa";
-import {addCard  } from '../Redux/cardSlice'
-import { setImageCart, resetImageBank  } from '../Redux/bankSlice';
+import {addCard  } from '../Redux/feature/cardSlice'
+import { setImageCart, resetImageBank  } from '../Redux/feature/bankSlice';
 
 // import { ProfileContext } from "../App";
 
