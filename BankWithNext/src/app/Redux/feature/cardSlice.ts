@@ -1,8 +1,22 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
+interface Card {
+    id: number;
+    name: string;
+    inventory: number;
+}
 
-const initialState = {
+interface initialState{
+    list:Card[],
+    historyList : (Card&{p:number})[],
+    selectedCard: Card|null,
+
+}
+
+
+
+const initialState:initialState = {
     list : [],
     historyList : [],
     selectedCard: null,
