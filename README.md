@@ -17,12 +17,12 @@
 > First, clone the project
 
 `````bash
-  git clone https://github.com/mahdihagollahi/BankGetWay-Redux.git
+  git clone https://github.com/mahdihagollahi/BankWithNext.git
 `````
-> to run sandoghProject with npm
+> to run BankWithNext with npm
 
 `````bash
-  cd BankGetWay-Redux
+  cd BankWithNext
   npm install
   npm run dev
 `````
